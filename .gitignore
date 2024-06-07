@@ -162,3 +162,6 @@ cython_debug/
 archived_models
 images
 dataset
+trained_models
+archive.zip
+dataset.zip
