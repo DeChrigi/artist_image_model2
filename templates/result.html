@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Prediction Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .scaled-img {
+            max-width: 50%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Predicted Artists and Probabilities</h1>
+        <div class="text-center mt-4">
+            <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" class="img-thumbnail scaled-img">
+        </div>
+        <div class="mt-4">
+            <h3>Prediction Results:</h3>
+            <ul class="list-group">
+                {% for index, row in artists.iterrows() %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ row['artist_name'] }}
+                    <span class="badge badge-primary badge-pill">{{ "%.2f" % (row['probability'] * 100) }}%</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Upload another image</a>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
