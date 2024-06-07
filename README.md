@@ -64,3 +64,39 @@ While an accuracy of 45% is not high enough to use the model in a professional e
 Another challenge is while an artist follows a style, this is not always the case. Artists tend to change their style over time which results in different results. Artists also tend to drawdifferent motives like portraits, landscapes or abstract art. So the model has a difficult time if the artist has a broad repertoire.
 
 The usecase itself was quite ambitious so im happy with an accuracy of 45%.
+
+# Tutorial for setting up the project
+
+Since the models and the dataset are quite big, it was not possible to push everything to github, even when zipping them.
+
+I stored the dataset and the trained models under following url: 
+https://drive.google.com/drive/u/0/folders/1VAaWbAD05p-8gmAP-vrFa4cObJQJ5UzO
+
+dataset.zip contains the dataset
+trained_models contain the trained models
+
+Just unzip the files in the root node of the project (on the same level as all the other python files are). After unzipping the files the structure should look like this:
+
+artist_image_model2
+¦
+¦--dataset
+¦  ¦
+¦  ¦--testimages
+¦  ¦--trainimages
+¦
+¦--trained_models
+¦  ¦
+¦  ¦--my_model_v2.h5
+¦  ¦--my_model_v4.h5
+¦  ¦--etc.
+¦
+¦--templates
+¦  ¦
+¦  ¦--index.html
+¦  ¦--result.html
+¦
+¦--application.py
+¦--dataset_analysis.ipync
+etc.
+
+after that everything should be working fine
