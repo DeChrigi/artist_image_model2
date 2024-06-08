@@ -47,6 +47,8 @@ The data generation process was consistent across all models. Image augmentation
 The model_analysis notebook provides deeper insights into the models' performance. Here is a summary:
 
 V6: Validation Accuracy: 0.45
+V7: Validation Accuracy: 0.41
+V8: Validation Accuracy: 
 V2: Validation Accuracy: 0.35
 V4: Validation Accuracy: 0.35
 V5: Validation Accuracy: 0.30
@@ -64,6 +66,10 @@ While an accuracy of 45% is not sufficient for professional use, it is still sig
 Another challenge is that, although artists often follow a particular style, this is not always consistent. Artists tend to change their style over time, resulting in varied outputs. Additionally, artists create different types of works, such as portraits, landscapes, or abstract art, which further complicates the model's task when the artist has a broad repertoire.
 
 Given the ambitious nature of the use case, I am satisfied with an accuracy of 45%.
+
+Since the dataset is from kaggle there are different people taking up the challenge of identifying artists by their artworks. They however filter out the classes / artists with less than 200 images resulting in only 11 different classes. They achieve an accuracy of up to 85% validation accuracy with this approach. I however didn't want to reduce the scope of the model despite the worse prospects.
+
+See: https://www.kaggle.com/code/kousikgvs/painter-identification-from-deep-learning
 
 # Tutorial for setting up the project
 
