@@ -40,6 +40,10 @@ Model V5: I reduced the learning rate to mitigate overfitting, which resulted in
 
 Model V6: This version utilized a pretrained VGG16 model to which I added my data. Ultimately, this model achieved the highest accuracy.
 
+Model V7: Second try on adding more layers to the base model V2 with a lower drop rate. It had a positive effect.
+
+Model V8: Model from V7 but with less image augmentation, resulted in a higher training accuracy but lower validation accuracy -> Overfit
+
 The data generation process was consistent across all models. Image augmentation positively affected validation accuracy, as without it, the models tended to overfit.
 
 # Validation
@@ -48,7 +52,7 @@ The model_analysis notebook provides deeper insights into the models' performanc
 
 V6: Validation Accuracy: 0.45
 V7: Validation Accuracy: 0.41
-V8: Validation Accuracy: 
+V8: Validation Accuracy: 0.37
 V2: Validation Accuracy: 0.35
 V4: Validation Accuracy: 0.35
 V5: Validation Accuracy: 0.30
