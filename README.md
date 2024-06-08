@@ -100,3 +100,11 @@ artist_image_model2
 etc.
 
 after that everything should be working fine
+
+Don't forget to setup a virtual environment
+
+python -m venv ./.venv
+
+./.venv/Scripts/activate
+
+pip install -r requirements.txt
