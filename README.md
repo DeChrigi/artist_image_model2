@@ -118,3 +118,5 @@ python -m venv ./.venv
 ./.venv/Scripts/activate
 
 pip install -r requirements.txt
+
+Python Version used = 3.12.1
