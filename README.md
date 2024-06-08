@@ -34,9 +34,9 @@ The model.py file is structured into different methods, which can be seen as mod
 
 Model V2: This version was my initial draft using a Convolutional Neural Network (CNN), which laid the foundation for subsequent versions.
 
-Model V4: In this version, I experimented with adding more layers to see if it would improve accuracy. However, it had a negative effect, resulting in lower accuracy.
+Model V4: In this version, I experimented with adding more layers to see if it would improve accuracy. However, the it didn't impact the accuracy at all.
 
-Model V5: I reduced the learning rate to mitigate overfitting, which positively impacted the accuracy.
+Model V5: I reduced the learning rate to mitigate overfitting, which resulted in a lower accuracy.
 
 Model V6: This version utilized a pretrained VGG16 model to which I added my data. Ultimately, this model achieved the highest accuracy.
 
