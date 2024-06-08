@@ -24,50 +24,50 @@ This dataset comprises paintings from 50 renowned artists, with each artist cont
 
 The downloadable file, "archive.zip," contains all the paintings organized into folders corresponding to each artist. I extracted and cleansed the data to correct naming errors in the folder structure, as detailed in the script "renameData.py."
 
-Subsequently, the paintings were divided into training and testing sets. The training set was exclusively used to train the models, while the test set was reserved for validating the models with previously unseen paintings.
+Subsequently, the paintings were divided into training and testing sets via the split_traintest.py. The training set was exclusively used to train the models, while the test set was reserved for validating the models with previously unseen paintings.
 
 # Modeling
 
-For the modelling part I took different approaches to reach the best possible accuracy without overfitting the data.
+For the modeling phase, I employed various approaches to achieve the best possible accuracy without overfitting the data.
 
-I structured the model.py in different methods which could be considered as model-versioning. 
+The model.py file is structured into different methods, which can be seen as model versioning.
 
-The V2 model was my first try with a cnn, which was also the foundation for the following version.
+Model V2: This version was my initial draft using a Convolutional Neural Network (CNN), which laid the foundation for subsequent versions.
 
-In the V4 model i tried adding more layers to see if it would improve the accuracy, but it had a negative effect (lower accuracy)
+Model V4: In this version, I experimented with adding more layers to see if it would improve accuracy. However, it had a negative effect, resulting in lower accuracy.
 
-In the V5 model i added a lower learning rate to reduce overfitting and it had a positive effect on the accuracy.
+Model V5: I reduced the learning rate to mitigate overfitting, which positively impacted the accuracy.
 
-In the V6 model i took a pretrained model VG16 and added my data to it. In the end, this was the model which resulted in the highest accuracy.
+Model V6: This version utilized a pretrained VGG16 model to which I added my data. Ultimately, this model achieved the highest accuracy.
 
-The datageneration was the same for all the models, image augmentation had a positive effect on the validation accuracy since without it the model was overfitting.
+The data generation process was consistent across all models. Image augmentation positively affected validation accuracy, as without it, the models tended to overfit.
 
 # Validation
 
-The notebook model_analysis gives deeper insights into how well the models performed. Here is TLDR version of it:
+The model_analysis notebook provides deeper insights into the models' performance. Here is a summary:
 
-V6: Val. Accuracy: 0.45
-V2: Val. Accuracy: 0.35
-V4: Val. Accuracy: 0.35
-V5: Val. Accuracy: 0.30
+V6: Validation Accuracy: 0.45
+V2: Validation Accuracy: 0.35
+V4: Validation Accuracy: 0.35
+V5: Validation Accuracy: 0.30
 
-For validating on how well the models actually performed i split the data into training and validation before even training the models. When training the model it uses all pictures in the ./dataset/training_images folder and splits those into training and validation when running the epochs. 
+For validation, I split the data into training and validation sets before training the models. During training, all images in the ./dataset/training_images folder are used, and these are further split into training and validation sets during the epochs.
 
-For the actual validation of the models the pictures in the folder ./dataset/test_images are used. The models have never seen those pictures before and are therefore significant for validation.
+For actual validation, the images in the ./dataset/test_images folder are used. These images have never been seen by the models before, making them significant for validation.
 
-There is also a frontend application called 'application.py' in which you can experiment areound on how well the models perform.
+Additionally, there is a frontend application called application.py where you can experiment with and evaluate the models' performance.
 
 # Interpretation
 
-While an accuracy of 45% is not high enough to use the model in a professional environment, it is still better than an uneducated guess by a lot. The cause for the low accuracy probably lies in the fact that the dataset is not well balanced. There is a spread from 25 to 877 pictures depending on the class, which results in a model which is heavily influenced by certain classes. When adding more pictures to the undersupplied classes the result would likely be better.
+While an accuracy of 45% is not sufficient for professional use, it is still significantly better than a random guess. The likely reason for the low accuracy is the imbalance in the dataset. The number of images per class ranges from 25 to 877, causing the model to be heavily influenced by certain classes. Adding more images to the underrepresented classes would likely improve the results.
 
-Another challenge is while an artist follows a style, this is not always the case. Artists tend to change their style over time which results in different results. Artists also tend to drawdifferent motives like portraits, landscapes or abstract art. So the model has a difficult time if the artist has a broad repertoire.
+Another challenge is that, although artists often follow a particular style, this is not always consistent. Artists tend to change their style over time, resulting in varied outputs. Additionally, artists create different types of works, such as portraits, landscapes, or abstract art, which further complicates the model's task when the artist has a broad repertoire.
 
-The usecase itself was quite ambitious so im happy with an accuracy of 45%.
+Given the ambitious nature of the use case, I am satisfied with an accuracy of 45%.
 
 # Tutorial for setting up the project
 
-Since the models and the dataset are quite big, it was not possible to push everything to github, even when zipping them.
+Since the models and the dataset are quite large, it was not possible to push everything to github, even when zipping them.
 
 I stored the dataset and the trained models under following url: 
 https://drive.google.com/drive/u/0/folders/1VAaWbAD05p-8gmAP-vrFa4cObJQJ5UzO
